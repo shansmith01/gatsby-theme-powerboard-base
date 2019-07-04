@@ -1,6 +1,11 @@
 {
   "name": "gatsby-theme-powerboard-base",
-  "version": "1.0.4",
+  "author": "Shannon Smith <shannon@powerboard.co.nz>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shansmith01/gatsby-theme-powerboard-base/"
+  },
+  "version": "1.0.5",
   "main": "index.js",
   "license": "MIT",
   "peerDependencies": {
@@ -38,5 +43,10 @@
     "eslint-plugin-react": "^7.14.2",
     "gatsby-plugin-eslint": "^2.0.5",
     "prettier": "^1.18.2"
-  }
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-theme",
+    "gatsby-plugin"
+  ]
 }
