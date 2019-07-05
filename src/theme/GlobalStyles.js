@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
 }
   
 html {
-    font-family: 'Roboto Slab', serif;
+  font-family: ${props => props.theme.mainFont};
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   font-size:calc(16px + .25vw)!important;
@@ -35,7 +35,7 @@ h1 {
   text-rendering: optimizeLegibility;
   font-size: 2.07rem;
   line-height: 2.314rem;
-  font-family: 'Raleway', sans-serif;
+  font-family: ${props => props.theme.headingFont};
   letter-spacing: .1rem;
 }
 h2 {
@@ -52,7 +52,7 @@ h2 {
   text-rendering: optimizeLegibility;
   font-size: 1.643rem;
   line-height: 1.643;
-  font-family: 'Raleway', sans-serif;
+  font-family: ${props => props.theme.headingFont};
 }
 h3 {
   margin-left: 0;
@@ -68,7 +68,7 @@ h3 {
   text-rendering: optimizeLegibility;
   font-size: 1.286rem;
   line-height: 2.071;
-  font-family: 'Raleway', sans-serif;
+  font-family: ${props => props.theme.headingFont};
 }
 h4 {
   margin-left: 0;

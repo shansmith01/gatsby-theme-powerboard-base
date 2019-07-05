@@ -1,12 +1,12 @@
-import styled from 'styled-components'
-import media from './Media'
+import styled from 'styled-components';
+import media from './Media';
 /**
  * A small list of stlyed compnents for making forms
  */
 
 const FormGroup = styled.div`
   margin-bottom: 1rem;
-`
+`;
 
 const FormGroup2col = styled.div.attrs(props => ({
   col: props.col || '1',
@@ -15,19 +15,17 @@ const FormGroup2col = styled.div.attrs(props => ({
 }))`
   display: grid;
   grid-template-columns: 1fr;
-
   grid-gap: ${props => props.gap};
   margin-bottom: 1rem;
-
   @media ${media.tablet} {
     grid-template-columns: repeat(${props => props.col}, 1fr);
   }
-`
+`;
 
 const FormLabel = styled.label`
   display: block;
   margin-bottom: 0.5rem;
-`
+`;
 
 const Input = styled.input`
   display: block;
@@ -35,13 +33,13 @@ const Input = styled.input`
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
-  color: #495057;
+  color: ${props => props.theme.textColor};
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #ced4da;
-  border-radius: 0.25rem;
+  border-radius: ${props => props.theme.borderRadius};
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-`
+`;
 
 const TextArea = styled.textarea`
   display: block;
@@ -53,17 +51,17 @@ const TextArea = styled.textarea`
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #ced4da;
-  border-radius: 0.25rem;
+  border-radius: ${props => props.theme.borderRadius};
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-`
+`;
 
 const Optional = styled.span`
   font-size: 0.8rem;
-`
+`;
 
 const Select = styled.select`
   display: block;
-`
+`;
 
 const StyledRadio = styled.div`
   .inputGroup {
@@ -154,15 +152,8 @@ const StyledRadio = styled.div`
       visibility: hidden;
     }
   }
-`
+`;
 
 export {
-  FormGroup,
-  FormLabel,
-  Input,
-  TextArea,
-  Optional,
-  FormGroup2col,
-  Select,
-  StyledRadio,
-}
+  FormGroup, FormLabel, Input, TextArea, Optional, FormGroup2col, Select, StyledRadio,
+};
