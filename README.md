@@ -1,4 +1,4 @@
-# Gatsby Theme Poeerboard - base
+# Gatsby Theme Powerboard - base
 
 This is a simple starter theme for making new sites quickly. This is a work and progress and simply based on my preferences of how I choose to use gatsby.
 
