@@ -4,11 +4,18 @@ import { useSpring, animated } from 'react-spring';
 import { Link } from 'gatsby';
 import config from '../../config';
 import media from '../styles/Media';
+import Toggle from './Toggle';
+
+const ToggleSection = styled.div`
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  text-align: right;
+`;
 
 const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
-  max-width: ${props => props.theme.maxwidth};
+  max-width: ${props => props.theme.layout.maxwidth};
   margin: 0 auto;
   padding: 2rem;
 `;
@@ -38,14 +45,14 @@ const MenuItem = styled.li`
   display: block;
   padding: 0 0.5rem;
   a {
-    color: ${props => props.theme.primaryColor};
+    color: ${props => props.theme.colors.primaryColor};
   }
   @media ${media.tablet} {
     display: inline;
   }
 `;
 
-const Toggle = styled.a`
+const ToggleLink = styled.a`
   @media ${media.tablet} {
     display: none;
   }
@@ -83,17 +90,19 @@ const Close = styled.a`
   color: #fff;
 `;
 
-const Menu = () => {
-  const [toggle, setToggle] = useState(false);
+const Menu = ({ darkMode, setDarkMode, darkModeToggle }) => {
+  const [toggleMenu, setToggleMenu] = useState(false);
 
   const mobAnimation = useSpring({
-    transform: toggle ? 'translate3D(0,0,0) scale(1)' : 'translate3D(100%,0,0) scale(0)',
+    transform: toggleMenu ? 'translate3D(0,0,0) scale(1)' : 'translate3D(100%,0,0) scale(0)',
   });
 
   return (
     <>
-      {toggle && <MobMenu style={mobAnimation} toggle={() => setToggle(false)} />}
-
+      {toggleMenu && <MobMenu style={mobAnimation} toggle={() => setToggleMenu(false)} />}
+      <ToggleSection>
+        {darkModeToggle && <Toggle darkMode={darkMode} setDarkMode={setDarkMode} />}
+      </ToggleSection>
       <Nav>
         <Logo>
           <Link to="/">{config.siteName}</Link>
@@ -106,7 +115,7 @@ const Menu = () => {
             </MenuItem>
           ))}
         </MenuItems>
-        <Toggle onClick={() => setToggle(!toggle)}>Menu</Toggle>
+        <ToggleLink onClick={() => setToggleMenu(!toggleMenu)}>Menu</ToggleLink>
       </Nav>
     </>
   );

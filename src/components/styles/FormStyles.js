@@ -33,11 +33,11 @@ const Input = styled.input`
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
-  color: ${props => props.theme.textColor};
+  color: ${props => props.theme.text};
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #ced4da;
-  border-radius: ${props => props.theme.borderRadius};
+  border-radius: ${props => props.theme.layout.borderRadius};
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 `;
 
@@ -65,7 +65,7 @@ const Select = styled.select`
 
 const StyledRadio = styled.div`
   .inputGroup {
-    background-color: ${props => props.theme.lightGrey};
+    background-color: ${props => props.theme.colors.muted};
     display: block;
     margin: 10px 0;
     position: relative;
@@ -83,7 +83,7 @@ const StyledRadio = styled.div`
       overflow: hidden;
       font-weight: bold;
       &:hover {
-        background: ${props => props.theme.lightBlue};
+        background: ${props => props.theme.colors.muted};
       }
 
       span {
@@ -95,7 +95,7 @@ const StyledRadio = styled.div`
         height: 10px;
         border-radius: 50%;
         content: '';
-        background-color: ${props => props.theme.secondaryColor};
+        background-color: ${props => props.theme.colors.secondary};
         position: absolute;
         left: 50%;
         top: 50%;

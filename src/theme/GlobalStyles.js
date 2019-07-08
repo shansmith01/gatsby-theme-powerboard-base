@@ -11,11 +11,11 @@ const GlobalStyle = createGlobalStyle`
 }
   
 html {
-  font-family: ${props => props.theme.mainFont};
+  font-family: ${props => props.theme.fonts.mainFont};
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   font-size:calc(16px + .25vw)!important;
-  color: #305964;
+  color: ${props => props.theme.colors.text};
 }
 
 
@@ -487,7 +487,7 @@ template {
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
-  color: ${props => props.theme.secondaryColor};
+  color: ${props => props.theme.colors.secondary};
 }
 a:active,
 a:hover {
@@ -647,7 +647,7 @@ html {
   box-sizing: inherit;
 }
 body {
-  color: hsla(0, 0%, 0%, 0.8);
+  
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
