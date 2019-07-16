@@ -1,8 +1,13 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import { flexbox } from 'styled-system';
 
 const Section = styled.section`
-  display: flex;
-  flex-wrap: wrap;  
+  ${flexbox}
+  display:flex;
 `;
+
+Section.defaultProps = {
+  flexWrap: 'wrap',
+};
 
 export default Section;

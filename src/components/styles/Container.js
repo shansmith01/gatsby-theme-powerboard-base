@@ -1,11 +1,20 @@
 import styled from 'styled-components';
+import { space, layout, flexbox } from 'styled-system';
+
+import theme from '../../theme/default';
 
 const Container = styled.div`
-  flex-grow: 1;
-  flex-shrink: 1;
-  padding: 1rem 2rem;
-  max-width: ${props => props.theme.layout.maxwidth};
-  margin: 0 auto;
+  ${flexbox};
+  ${space};
+  ${layout};
 `;
+
+Container.defaultProps = {
+  maxWidth: theme.sizes.maxWidth,
+  margin: '0 auto',
+  flexGrow: 1,
+  flexShrink: 1,
+  p: ['1rem', '2rem', '2rem'],
+};
 
 export default Container;

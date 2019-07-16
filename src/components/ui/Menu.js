@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { space, layout, flexbox } from 'styled-system';
 import { useSpring, animated } from 'react-spring';
 import { Link } from 'gatsby';
 import config from '../../config';
@@ -15,10 +16,14 @@ const ToggleSection = styled.div`
 const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
-  max-width: ${props => props.theme.layout.maxwidth};
+  max-width: ${props => props.theme.layout.maxWidth};
   margin: 0 auto;
-  padding: 2rem;
+  ${space},
+
 `;
+Nav.defaultProps = {
+  p: ['1rem', '2rem', '2rem'],
+};
 
 const Logo = styled.div`
   flex-grow: 1;
@@ -100,9 +105,9 @@ const Menu = ({ darkMode, setDarkMode, darkModeToggle }) => {
   return (
     <>
       {toggleMenu && <MobMenu style={mobAnimation} toggle={() => setToggleMenu(false)} />}
-      <ToggleSection>
-        {darkModeToggle && <Toggle darkMode={darkMode} setDarkMode={setDarkMode} />}
-      </ToggleSection>
+      
+        {darkModeToggle && <ToggleSection><Toggle darkMode={darkMode} setDarkMode={setDarkMode} / >  </ToggleSection>}
+     
       <Nav>
         <Logo>
           <Link to="/">{config.siteName}</Link>

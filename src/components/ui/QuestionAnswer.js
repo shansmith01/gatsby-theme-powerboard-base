@@ -1,23 +1,37 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { typography, space, color } from 'styled-system';
 
 const Question = styled.h4`
-  color: ${props => props.theme.secondaryColor};
-  margin-bottom: 0.5rem;
-  font-size: 1.1rem;
-  font-weight: bold;
   &:hover {
     color: #000;
     cursor: pointer;
   }
+  ${typography};
+  ${color}
 `;
+
+Question.defaultProps = {
+  fontSize: [2, 4, 4, 4],
+  fontWeight: 700,
+  mb: 5,
+  color: 'primary',
+};
 
 const Answer = styled.div`
   display: none;
-  margin-bottom: 2rem;
-  color: ${props => props.theme.lightGreyText};
+  ${space};
+  ${color};
+  ${typography};
 `;
+
+Answer.defaultProps = {
+  fontSize: [2, 3, 3, 3],
+  color: 'text',
+  mb: 3,
+};
+
 /**
  *  A simple FAQ compnent which displays a Question as a title and on click will show the answer
  */
@@ -39,10 +53,10 @@ const QuestionAnswer = ({ question, answer }) => {
 
 QuestionAnswer.propTypes = {
   /**
-   * Passes a question for an FAQ in string format - Sourced in DatoCMS */
+   * Passes a question for an FAQ in string format  */
   question: PropTypes.string,
   /**
-   * Passes and answer for an FAQ in a string format - Sourced in DatoCMS
+   * Passes and answer for an FAQ in a string format
    */
   answer: PropTypes.string,
 };
