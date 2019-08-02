@@ -25,6 +25,7 @@ module.exports = () => ({
         modules: ['gatsby-theme-powerboard'],
       },
     },
+
     {
       resolve: 'gatsby-plugin-react-helmet-canonical-urls',
       options: {
